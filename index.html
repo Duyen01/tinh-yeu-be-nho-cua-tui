@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Gửi Tít 💌</title>
+  <meta name="description" content="Em có một chút chuyện muốn nói với anh..." />
+  <meta name="theme-color" content="#ffe6ee" />
+  <meta property="og:title" content="Gửi Tít 💌" />
+  <meta property="og:description" content="Em có một chút chuyện muốn nói với anh..." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;500;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <!-- Nền pastel + trái tim bay -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+  <div class="hearts-layer" id="hearts" aria-hidden="true"></div>
+
+  <!-- Nút nhạc -->
+  <button class="music-btn" id="musicBtn" type="button" aria-label="Bật nhạc" aria-pressed="false">
+    <span class="music-icon" aria-hidden="true">♪</span>
+    <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+  </button>
+  <p class="music-tip" id="musicTip" aria-hidden="true">bật nhạc lên nghe cho vui nè ♪</p>
+  <audio id="bgm" loop preload="none"></audio>
+
+  <main>
+    <!-- ============ 1. OPENING ============ -->
+    <section class="section opening" id="opening">
+      <div class="opening-glow" aria-hidden="true"></div>
+      <span class="doodle d1" aria-hidden="true">☁</span>
+      <span class="doodle d2" aria-hidden="true">✦</span>
+      <span class="doodle d3" aria-hidden="true">✿</span>
+      <span class="doodle d4" aria-hidden="true">☁</span>
+
+      <div class="opening-inner">
+        <p class="to-tag stage" id="openTag">💌 gửi <span class="js-him">Tít</span></p>
+        <h1 class="hey" id="hey" data-text="Ê anh...">Ê anh...</h1>
+        <p class="sub stage" id="openSub">Em có một chút chuyện muốn nói với anh 💗</p>
+        <button class="btn btn-primary btn-glow stage" id="openBtn" type="button">Nhấn vào đây nhé ♡</button>
+        <p class="scroll-hint stage" id="scrollHint">đọc từ từ thôi nha, cuộn xuống nè ↓</p>
+      </div>
+    </section>
+
+    <!-- ============ 2. LỜI THÚ NHẬN ============ -->
+    <section class="section confess" id="confess">
+      <div class="container narrow">
+        <p class="eyebrow reveal">♡ một lời thú nhận</p>
+        <h2 class="title reveal">Thật ra em thích anh nhiều lắm.</h2>
+
+        <div class="chat glass reveal" id="chat">
+          <div class="chat-head">
+            <span class="avatar" aria-hidden="true">🌷</span>
+            <div>
+              <strong>Ebé❤️Mèo</strong>
+              <small><span class="online-dot"></span>đang nhắn cho anh <span class="js-him">Tít</span> iu...</small>
+            </div>
+          </div>
+          <div class="chat-body" id="chatBody" aria-live="polite">
+            <p class="msg">Em không biết từ bao giờ anh lại trở thành một phần quen thuộc trong cuộc sống của em như thế.</p>
+            <p class="msg">Em thích cảm giác có anh ở bên.</p>
+            <p class="msg">Thích những cuộc nói chuyện chẳng cần lý do.</p>
+            <p class="msg">Thích cả cách anh nhìn em, như thể cả thế giới chỉ có mình em thôi...</p>
+            <p class="msg">Nhưng thích nhất là sau tất cả, người em vẫn muốn tìm đến là anh.</p>
+            <p class="msg msg-small">nói ra rồi đó, ngại ghê 🙈</p>
+          </div>
+          <p class="chat-seen" id="chatSeen">Đã gửi ♡</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. NHỮNG ĐIỀU EM THÍCH ============ -->
+    <section class="section likes" id="likes">
+      <div class="container">
+        <p class="eyebrow reveal">♡ những điều nhỏ xíu</p>
+        <h2 class="title reveal">Những điều em thích ở anh</h2>
+        <p class="lead reveal">Chạm vào từng cái xem nha, mặt sau có lời nhắn nhỏ đó.</p>
+
+        <div class="cards">
+          <button class="flip reveal" type="button" aria-pressed="false" style="--d:.0s">
+            <span class="flip-inner">
+              <span class="face front"><span class="icon">♡</span><span class="card-title">Cách anh quan tâm em</span><span class="hint">chạm để lật ↻</span></span>
+              <span class="face back">Kể cả mấy câu "ăn gì chưa" nghe nhàm nhàm đó, em cũng thích.</span>
+            </span>
+          </button>
+          <button class="flip reveal" type="button" aria-pressed="false" style="--d:.08s">
+            <span class="flip-inner">
+              <span class="face front"><span class="icon">♡</span><span class="card-title">Cách anh nhớ những điều nhỏ xíu</span><span class="hint">chạm để lật ↻</span></span>
+              <span class="face back">Em thích uống gì, ghét ăn gì, anh nhớ hết. Ghê thật chứ.</span>
+            </span>
+          </button>
+          <button class="flip reveal" type="button" aria-pressed="false" style="--d:.16s">
+            <span class="flip-inner">
+              <span class="face front"><span class="icon">♡</span><span class="card-title">Cách anh làm em cười</span><span class="hint">chạm để lật ↻</span></span>
+              <span class="face back">Kể cả lúc em đang dỗi. Bực ghê, đang giận mà cũng cười được.</span>
+            </span>
+          </button>
+          <button class="flip reveal" type="button" aria-pressed="false" style="--d:.0s">
+            <span class="flip-inner">
+              <span class="face front"><span class="icon">♡</span><span class="card-title">Cách anh ở bên em</span><span class="hint">chạm để lật ↻</span></span>
+              <span class="face back">Không cần nói gì nhiều đâu. Có anh ở đó là em thấy yên tâm rồi.</span>
+            </span>
+          </button>
+          <button class="flip reveal" type="button" aria-pressed="false" style="--d:.08s">
+            <span class="flip-inner">
+              <span class="face front"><span class="icon">♡</span><span class="card-title">Cách anh khiến một ngày bình thường trở nên vui hơn</span><span class="hint">chạm để lật ↻</span></span>
+              <span class="face back">Hôm nào có tin nhắn của anh là hôm đó tự nhiên dễ thương hơn hẳn.</span>
+            </span>
+          </button>
+          <button class="flip reveal" type="button" aria-pressed="false" style="--d:.16s">
+            <span class="flip-inner">
+              <span class="face front"><span class="icon">♡</span><span class="card-title">Và đơn giản là... vì anh là anh.</span><span class="hint">chạm để lật ↻</span></span>
+              <span class="face back">Không có lý do nào khác đâu. Là anh thì em thích thôi.</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Câu nói nhỏ chen giữa -->
+    <section class="interlude" aria-label="Một câu nhỏ">
+      <span class="quote-mark reveal" aria-hidden="true">“</span>
+      <p class="reveal">Em không cần một tình yêu lúc nào cũng hoàn hảo. Em chỉ mong chúng mình luôn thật lòng với nhau, cùng nhau cố gắng, và vẫn chọn nhau sau mỗi ngày.</p>
+    </section>
+
+    <!-- ============ 4. TIMELINE ============ -->
+    <section class="section story" id="story">
+      <div class="container">
+        <p class="eyebrow reveal">♡ chuyện của hai đứa</p>
+        <h2 class="title reveal">Chuyện của mình</h2>
+        <p class="lead reveal">của <span class="js-him">Tít</span> và <span class="js-her">Duyên</span>, kể theo thứ tự nha.</p>
+        <!-- Nội dung timeline lấy từ config.js -->
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- ============ 6. LÁ THƯ ============ -->
+    <section class="section letter-sec" id="letter">
+      <div class="container">
+        <p class="eyebrow reveal">♡ một lời hứa nhỏ</p>
+        <h2 class="title reveal">Em viết thư cho anh nè</h2>
+
+        <article class="letter reveal">
+          <span class="seal" aria-hidden="true">♥</span>
+          <h3 class="letter-to">Gửi <span class="js-him">Tít</span> của em,</h3>
+          <p>Em không hứa chúng mình sẽ không bao giờ cãi nhau.<br />
+            Không hứa lúc nào em cũng sẽ ngoan.<br />
+            Cũng không hứa em sẽ hết dỗi anh...</p>
+
+          <button class="btn btn-soft btn-sm" id="butBtn" type="button">Nhưng mà... ♡</button>
+
+          <div class="promise" id="promise">
+            <p>Nhưng em hứa nếu chúng mình còn thương nhau,<br />
+              em sẽ luôn cố gắng để <mark>hiểu anh hơn một chút</mark>,<br />
+              <mark>thương anh nhiều hơn một chút</mark>,<br />
+              và cùng anh đi qua những ngày bình thường nhất.</p>
+            <p class="letter-sign">— <span class="js-her">Duyên</span></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Câu nói nhỏ chen giữa -->
+    <section class="interlude interlude-steps" aria-label="Một câu nhỏ">
+      <p class="reveal">Và nếu anh hỏi em có yêu anh nhiều không...</p>
+      <p class="reveal" style="--d:.5s">Thì chắc là...</p>
+      <p class="reveal accent" style="--d:1s">nhiều hơn những gì em hay nói.</p>
+    </section>
+
+    <!-- ============ 7. CÂU HỎI ============ -->
+    <section class="section ask-sec" id="ask">
+      <div class="container">
+        <div class="ask glass reveal">
+          <p class="eyebrow">♡ câu hỏi nhỏ</p>
+          <h2 class="ask-q">Anh có biết em yêu anh bao nhiêu không?</h2>
+          <div class="ask-btns" id="askBtns">
+            <button class="btn btn-primary" type="button" data-answer="yes">Biết rồi ❤️</button>
+            <button class="btn btn-soft" type="button" data-answer="no">Chưa biết...</button>
+          </div>
+          <div class="ask-reply" id="askReply" aria-live="polite"></div>
+          <p class="love-big" id="loveBig" hidden><span>EM YÊU ANH</span> <span>RẤT NHIỀU.</span></p>
+          <p class="love-after" id="loveAfter" hidden>Nhớ kỹ nha. Lần sau em hỏi là phải biết rồi đó 😤</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. LỜI CUỐI ============ -->
+    <section class="section final" id="final">
+      <div class="final-glow" aria-hidden="true"></div>
+      <div class="sparkles" id="sparkles" aria-hidden="true"></div>
+
+      <div class="final-content" id="finalContent">
+        <p class="final-line f-small" data-wait="300">Cuối cùng...</p>
+        <p class="final-line f-small" data-wait="1300">Em chỉ muốn nói rằng...</p>
+        <p class="final-line f-main" data-wait="1500">Em rất vui vì người bên cạnh em hiện tại là anh.</p>
+        <p class="final-line f-main" data-wait="2000">Hy vọng chúng mình sẽ còn có thật nhiều ngày bình thường bên nhau.</p>
+
+        <ul class="f-list">
+          <li class="final-line" data-wait="1600">Ăn cùng nhau.</li>
+          <li class="final-line" data-wait="750">Đi chơi cùng nhau.</li>
+          <li class="final-line" data-wait="750">Nắm tay nhau thật chặt.</li>
+          <li class="final-line" data-wait="750">Thương nhau mỗi ngày.</li>
+          <li class="final-line" data-wait="750">Cười với nhau thật nhiều.</li>
+        </ul>
+
+        <p class="final-line f-small" data-wait="1800">Và nếu có thể...</p>
+        <p class="final-line f-main" data-wait="1500">Em muốn những năm sau này,<br />người cùng em làm những điều nhỏ bé ấy<br /><strong>vẫn là anh.</strong></p>
+
+        <p class="final-line f-love" data-wait="2200" data-burst>Yêu anh <span class="js-him">Tít</span> <span class="beat">❤️</span></p>
+        <p class="final-line f-sign" data-wait="900">— Em bé iu của anh</p>
+
+        <div class="final-line final-actions" data-wait="1200">
+          <button class="btn btn-secret" id="secretBtn" type="button">Em còn một bí mật... 🤫</button>
+          <button class="btn btn-ghost" id="replayBtn" type="button">Đọc lại từ đầu ↺</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Em tự tay làm cái này đó. Khen em một câu đi 😌</p>
+    <small>chỉ dành riêng cho <span class="js-him">Tít</span> ♡</small>
+  </footer>
+
+  <!-- ============ EASTER EGG ============ -->
+  <div class="modal" id="secretModal" role="dialog" aria-modal="true" aria-labelledby="secretText" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" tabindex="-1">
+      <button class="modal-x" type="button" data-close aria-label="Đóng">×</button>
+      <div class="modal-emoji" aria-hidden="true">🥺</div>
+      <p class="modal-text" id="secretText">Thật ra em làm cái web này chỉ để có một cái cớ nói với anh rằng...</p>
+      <p class="modal-big" id="secretBig">EM THÍCH ANH RẤT NHIỀU. 🥺❤️</p>
+      <button class="btn btn-primary btn-sm" type="button" data-close>Biết rồi mà ♡</button>
+    </div>
+  </div>
+
+  <div class="fx-layer" id="fx" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
